@@ -153,7 +153,7 @@ texture = ExtResource("2_sgulc")
 light_mask = 0
 visibility_layer = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Mask"]
+[node name="MaskFix" type="Sprite2D" parent="Mask"]
 texture = ExtResource("3_jd5vx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

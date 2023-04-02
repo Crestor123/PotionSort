@@ -1,6 +1,8 @@
 res://default_env.tres
+res://Objects/MixBottle.tscn
+res://Objects/MixBottle.gd
+res://Objects/Mixer.tscn
+res://Scripts/Mixer.gd
 res://Scenes/TestScene.tscn
 res://Objects/Bottle.tscn
 res://Objects/PotionUnit.tscn
-res://Objects/MixBottle.tscn
-res://Scripts/PotionUnit.gd
