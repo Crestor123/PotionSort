@@ -10,7 +10,7 @@ var PotionColors = Global.PotionColors
 @export var bottles = {
 	1: [PotionColors.RED, PotionColors.BLUE, PotionColors.GREEN, PotionColors.RED], 
 	2: [PotionColors.GREEN, PotionColors.GREEN, PotionColors.BLUE],
-	3: [PotionColors.RED],
+	3: [PotionColors.ORANGE],
 	4: [null]
 	}
 

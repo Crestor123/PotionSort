@@ -1,37 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxrjs1psmms6"]
+[gd_scene load_steps=9 format=3 uid="uid://bxrjs1psmms6"]
 
 [ext_resource type="Script" path="res://Scripts/Bottle.gd" id="1_3ww4r"]
-[ext_resource type="Texture2D" uid="uid://bsfk4n6kpdlwb" path="res://Sprites/Masks/4BottleMask.png" id="2_f4fqp"]
+[ext_resource type="Texture2D" uid="uid://dxn4e4pecnvw3" path="res://Sprites/Masks/4BottleMaskv3.png" id="2_sgulc"]
 [ext_resource type="Texture2D" uid="uid://d3c74m80147sq" path="res://Sprites/Masks/MaskFix.png" id="3_jd5vx"]
 [ext_resource type="Texture2D" uid="uid://d3vx6df2e5t3a" path="res://Sprites/4Bottle.png" id="4_hye4n"]
-
-[sub_resource type="Animation" id="Animation_14ei3"]
-resource_name = "select"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BottleSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -16)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Mask:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -16)]
-}
+[ext_resource type="Texture2D" uid="uid://dlxc7iqollkme" path="res://Sprites/4BottleOutline.png" id="6_x0hxu"]
 
 [sub_resource type="Animation" id="Animation_ltuqm"]
 resource_name = "invalid"
@@ -85,6 +58,70 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, -16), Vector2(0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Outline:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, 0.0, -0.174533, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Outline:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -16), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_14ei3"]
+resource_name = "select"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottleSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mask:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Outline:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qy6rg"]
 _data = {
@@ -106,12 +143,15 @@ flat = true
 
 [node name="Mask" type="Sprite2D" parent="."]
 clip_children = 1
-light_mask = 1025
+light_mask = 1024
+visibility_layer = 2
 texture_filter = 1
 texture_repeat = 1
-texture = ExtResource("2_f4fqp")
+texture = ExtResource("2_sgulc")
 
 [node name="Liquid" type="Node2D" parent="Mask"]
+light_mask = 0
+visibility_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask"]
 texture = ExtResource("3_jd5vx")
@@ -121,7 +161,12 @@ libraries = {
 "": SubResource("AnimationLibrary_qy6rg")
 }
 
+[node name="Outline" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("6_x0hxu")
+
 [node name="BottleSprite" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.588235)
 light_mask = 2
 visibility_layer = 2
 texture_filter = 1

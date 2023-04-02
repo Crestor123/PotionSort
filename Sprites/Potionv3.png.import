@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct667cj4p5xcm"
-path="res://.godot/imported/4BottleMaskv2.png-deec4c9fa42804c8aba6eb157e66612e.ctex"
+uid="uid://bpq2wrny52kcp"
+path="res://.godot/imported/Potionv3.png-d661d01af35572bfaeedcf3d56518fe6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Masks/4BottleMaskv2.png"
-dest_files=["res://.godot/imported/4BottleMaskv2.png-deec4c9fa42804c8aba6eb157e66612e.ctex"]
+source_file="res://Sprites/Potionv3.png"
+dest_files=["res://.godot/imported/Potionv3.png-d661d01af35572bfaeedcf3d56518fe6.ctex"]
 
 [params]
 

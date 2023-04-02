@@ -1,9 +1,6 @@
 res://default_env.tres
 res://Scenes/TestScene.tscn
-res://Objects/4Bottle.tscn
-res://Objects/PotionUnit.tscn
-res://Scripts/4Bottle.gd
-res://Scripts/Bottles.gd
-res://Objects/MixBottle.tscn
 res://Objects/Bottle.tscn
-res://Objects/MixBottle.gd
+res://Objects/PotionUnit.tscn
+res://Objects/MixBottle.tscn
+res://Scripts/PotionUnit.gd
