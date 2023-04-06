@@ -4,6 +4,7 @@ extends Node2D
 #Receives information about selected bottles
 
 var bottle = preload("res://Objects/Bottle.tscn")
+var mixer = preload("res://Objects/Mixer.tscn")
 var PotionColors = Global.PotionColors
 
 #Listed top to bottom
@@ -11,7 +12,8 @@ var PotionColors = Global.PotionColors
 	1: [PotionColors.RED, PotionColors.BLUE, PotionColors.GREEN, PotionColors.RED], 
 	2: [PotionColors.GREEN, PotionColors.GREEN, PotionColors.BLUE],
 	3: [PotionColors.ORANGE],
-	4: [null]
+	4: [null],
+	5: ["mix"]
 	}
 
 var selectedBottle = null
@@ -19,6 +21,15 @@ var selectedBottle = null
 func _ready():
 	var bottlePosition = Vector2(500, 300)
 	for item in bottles:
+		if str(bottles[item][0]) == "mix":
+			var newBottle = mixer.instantiate()
+			bottlePosition.x += 48
+			newBottle.position = bottlePosition
+			bottlePosition.x += 64
+			add_child(newBottle)
+			newBottle.connect("selected", bottleSelected)
+			newBottle.bottle.connect("selected", bottleSelected)
+			continue
 		var newBottle = bottle.instantiate()
 		newBottle.PotionColors = PotionColors
 		newBottle.slots.clear()

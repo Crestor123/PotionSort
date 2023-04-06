@@ -1,57 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwsradxnw44ob"]
+[gd_scene load_steps=5 format=3 uid="uid://bwsradxnw44ob"]
 
 [ext_resource type="Script" path="res://Scripts/Mixer.gd" id="1_hq46g"]
 [ext_resource type="PackedScene" uid="uid://bxrjs1psmms6" path="res://Objects/Bottle.tscn" id="2_j0snf"]
-[ext_resource type="Texture2D" uid="uid://sdj7oycsnh7p" path="res://Sprites/Mixer.png" id="2_t434u"]
-[ext_resource type="Texture2D" uid="uid://dht546h4csls1" path="res://Sprites/MixerOutline.png" id="3_653bo"]
-[ext_resource type="Texture2D" uid="uid://cqd3f1vsik66u" path="res://Sprites/Masks/MixerMask.png" id="5_07uui"]
-[ext_resource type="Texture2D" uid="uid://d3c74m80147sq" path="res://Sprites/Masks/MaskFix.png" id="6_f6wci"]
+[ext_resource type="Texture2D" uid="uid://dg4wykg6l1bnh" path="res://Sprites/Mixerv2.png" id="3_7kudb"]
+[ext_resource type="PackedScene" uid="uid://33yesqkv3tii" path="res://Objects/SmallBottle.tscn" id="3_pgh1t"]
 
 [node name="Mixer" type="Node2D"]
 script = ExtResource("1_hq46g")
 
 [node name="Bottle" parent="." instance=ExtResource("2_j0snf")]
 
-[node name="Sprite" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.588235)
-texture_filter = 1
-position = Vector2(0, -120)
+[node name="LeftBottle" parent="." instance=ExtResource("3_pgh1t")]
+position = Vector2(-48, -120)
 scale = Vector2(3, 3)
-texture = ExtResource("2_t434u")
+
+[node name="RightBottle" parent="." instance=ExtResource("3_pgh1t")]
+position = Vector2(48, -120)
+scale = Vector2(3, 3)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -72)
+scale = Vector2(3, 3)
+texture = ExtResource("3_7kudb")
 
 [node name="Outline" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -120)
 scale = Vector2(3, 3)
-texture = ExtResource("3_653bo")
-
-[node name="LeftButton" type="Button" parent="."]
-offset_left = -78.0
-offset_top = -198.0
-offset_right = -18.0
-offset_bottom = -86.0
-focus_mode = 0
-flat = true
-
-[node name="RightButton" type="Button" parent="."]
-offset_left = 18.0
-offset_top = -199.0
-offset_right = 78.0
-offset_bottom = -87.0
-focus_mode = 0
-flat = true
-
-[node name="Mask" type="Sprite2D" parent="."]
-clip_children = 1
-z_index = -1
-texture_filter = 1
-position = Vector2(0, -120)
-scale = Vector2(3, 3)
-texture = ExtResource("5_07uui")
-
-[node name="LeftLiquid" type="Node2D" parent="Mask"]
-
-[node name="RightLiquid" type="Node2D" parent="Mask"]
-
-[node name="MaskFix" type="Sprite2D" parent="Mask"]
-texture = ExtResource("6_f6wci")

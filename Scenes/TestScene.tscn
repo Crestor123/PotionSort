@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://6irtb6klhqoc"]
+[gd_scene load_steps=2 format=3 uid="uid://6irtb6klhqoc"]
 
 [ext_resource type="Script" path="res://Scripts/Bottles.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://bwsradxnw44ob" path="res://Objects/Mixer.tscn" id="2_44ali"]
 
 [node name="TestScene" type="Node2D"]
 
 [node name="Bottles" type="Node2D" parent="."]
 script = ExtResource("2")
-
-[node name="Mixer" parent="." instance=ExtResource("2_44ali")]
-position = Vector2(236, 287)
