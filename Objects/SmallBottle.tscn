@@ -24,7 +24,7 @@ texture = ExtResource("3_ju0nc")
 self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("1_d13y0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Outline" type="Sprite2D" parent="."]
 texture = ExtResource("4_1agti")
 
 [node name="Button" type="Button" parent="."]

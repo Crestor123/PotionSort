@@ -14,6 +14,7 @@ var PotionColors = Global.PotionColors
 var liquidSlots = [null, null, null, null]
 
 var liquidPosition = 24
+var type = "normal"
 
 signal selected(bottle)
 

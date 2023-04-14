@@ -28,7 +28,7 @@ func _ready():
 			bottlePosition.x += 64
 			add_child(newBottle)
 			newBottle.connect("selected", bottleSelected)
-			newBottle.bottle.connect("selected", bottleSelected)
+			#newBottle.bottle.connect("selected", bottleSelected)
 			continue
 		var newBottle = bottle.instantiate()
 		newBottle.PotionColors = PotionColors

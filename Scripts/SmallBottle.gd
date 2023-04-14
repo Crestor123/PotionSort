@@ -11,9 +11,10 @@ var PotionColors = Global.PotionColors
 @export var slots = [null, null]
 var liquidSlots = [null, null]
 
-var liquidPosition = 24
+var liquidPosition = 0
+var type = "small"
 
-signal selected(bottle)
+signal selected(bottle : Node2D)
 
 func _ready():
 	print(global_position)
@@ -100,4 +101,6 @@ func updateBottle():
 	pass
 
 func _on_button_pressed():
-	emit_signal("selected", self)
+	print("button signal")
+	#emit_signal("selected", self)
+	selected.emit(self)

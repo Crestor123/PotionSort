@@ -3,8 +3,8 @@ res://Scenes/TestScene.tscn
 res://Objects/Bottle.tscn
 res://Objects/PotionUnit.tscn
 res://Objects/Mixer.tscn
-res://Objects/small_bottle.tscn
-res://Scripts/Bottles.gd
 res://Objects/SmallBottle.tscn
 res://Scripts/Mixer.gd
 res://Scripts/SmallBottle.gd
+res://Scripts/Bottles.gd
+res://Scripts/Bottle.gd

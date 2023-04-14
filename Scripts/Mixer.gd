@@ -9,8 +9,12 @@ var PotionColors = Global.PotionColors
 
 signal selected(bottle)
 
-func ready():
-	left.connect("selected", select)
+func _ready():
+	left.selected.connect(select)
+	left.type = "mix"
+	right.selected.connect(select)
+	right.type = "mix"
 	
-func select():
+func select(bottle : Node2D):
+	emit_signal("selected", bottle)
 	pass
